@@ -1,0 +1,48 @@
+<div ng-cloak>
+<div class="row">
+    <div class="col-md-8">
+        <h1>Welcome {{vm.user.name}}!</h1>
+    </div>
+    <div class="col-md-4">
+    </div>
+</div>
+    <div class="row">
+        <label>Name:</label>
+        <!--<input type="text" ng-model="vm.user.name"/>-->
+        <span ng-attr-contenteditable="true" ng-model="vm.user.name"></span>
+    </div>
+    <div class="row">
+        <label>Age:</label>
+        <input type="number" ng-model="vm.user.age"/>
+    </div>
+    <div class="row">
+        <label>Salary:</label>
+        <input type="text" ng-model="vm.user.salary"/>
+    </div>
+    <div style="text-align: right;">
+        <button ng-click="vm.save()">Save</button>
+    </div>
+    <button ng-click="vm.left()">Left</button>
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Salary</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in vm.userList track by $index">
+                    <td>{{user.name}}</td>
+                    <td>{{user.age}}</td>
+                    <td>{{user.salary}}</td>
+                    <td><span ng-click="vm.editUser(user)"><i class="fa fa-pencil"></i></span></td>
+                    <td><span ng-click="vm.deleteUser(user)"><i class="fa fa-trash"></i></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
