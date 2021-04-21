@@ -1,0 +1,40 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Adhoc Mass Messaging</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css content/css/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css">
+</head>
+<body ng-app="myApp" ng-controller="BodyController">
+    <div>
+        {{user}}
+    </div>
+    <a ui-sref="hello" ui-sref-active="active">Hello</a>
+    <a ui-sref="about" ui-sref-active="active">About</a>
+
+    <ui-view></ui-view>
+    <div class="container">
+    <div ui-view="content" ng-cloak></div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+
+    <script src="app/app.js"></script>
+    <script src="app/testapp.js"></script>
+    <script src="app/user/app.config.js"></script>
+    <script src="app/user/user.state.js"></script>
+    <script src="app/user/user.controller.js"></script>
+    <script src="app/user/content-editable.directive.js"></script>
+</body>
+</html>
